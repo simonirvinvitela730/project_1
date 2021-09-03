@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" 
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" 
+    crossorigin="anonymous">
+    <title>DONDA Admin Portal</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
+      body{
+    background-color: rgb(179, 151, 30);
+    margin: 0px;
+    font-family: 'Oswald', sans-serif;
+}
+      h1{
+        text-align: center;
+      }
+    </style>
+</head>
+  <body> 
+    <h1> DONDA Admin Portal</h1>
+    <table class="table table-dark table table-striped" >
+      <thead>
+        <tr>
+          <th scope="col">Employee ID</th>
+          <th scope="col">Employee First Name</th>
+          <th scope="col">Employee Last Name</th>
+          <th scope="col">Ticket ID</th>
+          <th scope="col">Type</th>
+          <th scope="col">Description</th>
+          <th scope="col">Amount</th>
+          <th scope="col">Time Submitted</th>
+          <th scope="col">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Jacob</td>
+          <td>Thorton</td>
+          <td>4</td>
+          <td>Other</td>
+          <td>Lodging</td>
+          <td>378.23</td>
+          <td>12:30:18</td>
+          <td class="dropdown">
+            <form action="" name="FILTER">
+                <select name="filter_for" >
+                    <option value="rejected">rejected</option>
+                    <option value="pending">pending</option>
+                    <option value="approved">approved</option>
+                </select>
+            </form>
+        </td>
+        </tr>
+        <tr>
+          <th scope="row">1</th>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>15</td>
+          <td>Other</td>
+          <td>KungfuKenny56!</td>
+          <td>157.23</td>
+          <td>12:30:18</td>
+          <td class="dropdown">
+            <form action="" name="FILTER">
+                <select name="filter_for" >
+                    <option value="rejected">rejected</option>
+                    <option value="pending">pending</option>
+                    <option value="approved">approved</option>
+                </select>
+            </form>
+        </td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Larry</td>
+          <td>the Bird</td>
+          <td>5</td>
+          <td>Food</td>
+          <td>Orochimaru88@</td>
+          <td>784.27</td>
+          <td>12:30:18</td>
+          <td class="dropdown">
+            <form action="" name="FILTER">
+                <select name="filter_for" fclass= "form-field">
+                    <option value="rejected">rejected</option>
+                    <option value="pending">pending</option>
+                    <option value="approved">approved</option>
+                </select>
+            </form>
+        </td>
+        </tr>
+      </tbody>
+    </table>
+    <button type="button" class="btn btn-outline-danger btn btn-block">Submit Changes
+    </button>
+  </body>
+
+</html>

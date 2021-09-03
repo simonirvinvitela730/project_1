@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <title>DONDA ADD REIMBURSEMENT</title>
+    <style>
+         @import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@100;500&family=Rubik:wght@300&display=swap');
+
+        *{
+            font-family: 'Azeret Mono', monospace;
+        }
+        h1{
+          text-align: center;
+          font-size: 2.5em; /* 40px/16=2.5em */
+        }
+        h6{
+            text-align: center;
+        }
+
+        #formhead{
+            background-color: cornflowerblue;
+        }
+    </style>
+</head>
+<form action=" " method="post">
+    <div class="container">
+            <div id="formhead" class="form-group, jumbotron">
+                <h1>DONDA Reimbursement Request Form</h1>
+                <h6>Please fill out the form to submit a reimbursement request for pending approval</h6>
+            </div>
+        <div class="row">
+            <div class="form-group, col-lg-4">
+                <label for="empid"><b>Employee ID</b></label>
+                <input type="text" placeholder="Enter Employee ID" name="empid" id="empid" required>
+            </div>
+            <div class="form-group, col-lg-4">
+                <label for="amount"><b>Reimbursement Amount</b></label>
+                <input columns="4" type="text" placeholder="Enter Amount" name="amount" id="amount" required>
+            </div>
+        
+            <div class="form-group, col-lg-4">
+                <label for="type">Type of Reimbursement</label>
+                    <select name = "type" required>
+                        <option value = "lodging" selected>Lodging</option>
+                        <option value = "travel">Travel</option>
+                        <option value = "food">Food</option>
+                        <option value = "other">Other</option>
+                    </select>
+            </div>
+        </div> 
+        <br>
+    <div class="form-group">
+      <label for="desc"><b>Description</b></label>
+      <textarea class="form-control" id="desc" rows="4" required></textarea>
+    </div>
+      <button type="submit" class="btn btn-outline-primary btn-block">Submit</button>
+    </div>
+
+  </form>
