@@ -27,23 +27,20 @@
         }
     </style>
 </head>
-<form action=" " method="post">
+<body>
+<form action="AddTicket" method="post">
     <div class="container">
             <div id="formhead" class="form-group, jumbotron">
                 <h1>DONDA Reimbursement Request Form</h1>
                 <h6>Please fill out the form to submit a reimbursement request for pending approval</h6>
             </div>
         <div class="row">
-            <div class="form-group, col-lg-4">
-                <label for="empid"><b>Employee ID</b></label>
-                <input type="text" placeholder="Enter Employee ID" name="empid" id="empid" required>
-            </div>
-            <div class="form-group, col-lg-4">
+            <div class="form-group, col-lg-6">
                 <label for="amount"><b>Reimbursement Amount</b></label>
-                <input columns="4" type="text" placeholder="Enter Amount" name="amount" id="amount" required>
+                <input type="text" placeholder="Enter Amount" name="amount" id="amount" required>
             </div>
         
-            <div class="form-group, col-lg-4">
+            <div class="form-group, col-lg-6">
                 <label for="type">Type of Reimbursement</label>
                     <select name = "type" required>
                         <option value = "lodging" selected>Lodging</option>
@@ -53,12 +50,32 @@
                     </select>
             </div>
         </div> 
+        <div class="form-group">
+        	<input type="hidden" name="timestamp" id="timestamp">
+        </div>
         <br>
     <div class="form-group">
-      <label for="desc"><b>Description</b></label>
-      <textarea class="form-control" id="desc" rows="4" required></textarea>
+      <label for="desc">Description</label>
+      <textarea name="desc" class="form-control" id="desc" rows="4" required></textarea>
     </div>
-      <button type="submit" class="btn btn-outline-primary btn-block">Submit</button>
+      <button type="submit" class="btn btn-outline-primary btn-block" onclick="getDate()">Submit</button>
     </div>
 
   </form>
+  <script>  
+  function getDate()
+  {
+	  const currentDate = new Date();
+
+	  const currentDayOfMonth = currentDate.getDate();
+	  const currentMonth = currentDate.getMonth();
+	  const currentYear = currentDate.getFullYear();
+
+	  const dateString = currentDayOfMonth + "-" + (currentMonth + 1) + "-" + currentYear;
+	  
+	  var time = currentDate.getHours() + ":" + currentDate.getMinutes() + ":" + currentDate.getSeconds();
+	  
+      document.getElementById("timestamp").value = dateString + " " +time;
+  }
+  </script>
+  </body>

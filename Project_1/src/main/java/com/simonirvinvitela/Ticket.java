@@ -28,12 +28,12 @@ public class Ticket {
 	private String type;
 	private double amount;
 	private String description;
-	private Timestamp ts;
+	private String ts;
 	
 	public Ticket(){}
 
 	public Ticket(int ticket_id, Employee employee, String status, String type, double amount, String description,
-			Timestamp ts) {
+			String ts) {
 		this.ticket_id = new Random().nextInt(10000);
 		this.employee = employee;
 		this.status = status;
@@ -85,11 +85,11 @@ public class Ticket {
 		this.description = description;
 	}
 
-	public Timestamp getTs() {
+	public String getTs() {
 		return ts;
 	}
 
-	public void setTs(Timestamp ts) {
+	public void setTs(String ts) {
 		this.ts = ts;
 	}
 	

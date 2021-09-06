@@ -13,7 +13,7 @@
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
       body{
-    background-color: rgb(14, 90, 95);
+    background-color: rgb(128, 255, 128);
     margin: 0px;
     font-family: 'Oswald', sans-serif;
 }
@@ -24,45 +24,7 @@
 </head>
   <body>
     <h1>DONDA Employee Portal</h1>
-    <table class="table table-dark table table-striped" >
-      <thead>
-        <tr>
-          <th scope="col">Ticket ID</th>
-          <th scope="col">Type</th>
-          <th scope="col">Description</th>
-          <th scope="col">Amount</th>
-          <th scope="col">Time Submitted</th>
-          <th scope="col">Status</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">23</th>
-          <td>Travel</td>
-          <td>Trip to Quebec</td>
-          <td>120.73</td>
-          <td>2021-09-01 20:49:53</td>
-          <td>approved</td>
-        </tr>
-        <tr>
-          <th scope="row">7</th>
-          <td>Other</td>
-          <td>Flamethrower</td>
-          <td>378.52</td>
-          <td>2021-08-13 11:27:38</td>
-          <td>declined</td>
-        </tr>
-        <tr>
-          <th scope="row">24</th>
-          <td>Lodging</td>
-          <td>Quebec hotel</td>
-          <td>1524.15</td>
-          <td>2021-09-02 18:12:23</td>
-          <td>pending</td>
-        </tr>
-      </tbody>
-    </table>
-    <button type="button" class="btn btn-outline-primary btn btn-block">Submit New Reimbursement Request</button>
+    <button type="button" class="btn btn-outline-primary btn btn-block" onclick="window.location.href='addReimbursement.html';">Submit New Reimbursement Request</button>
   </body>
 
 </html>
