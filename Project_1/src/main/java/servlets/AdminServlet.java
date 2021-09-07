@@ -43,26 +43,31 @@ public class AdminServlet extends HttpServlet{
 				
 				out.print("<br>");
 				out.print("<h5 class='text-center'> Welcome "+firstName+" "+lastName+"</h5>");
-	        	
-				Iterator<Ticket> listIterator = ticketList.iterator();
-		        while (listIterator.hasNext()) {
-		        	Ticket ticket = listIterator.next();
-		        	int ticket_id = ticket.getTicket_id();
-		        	Employee employee2 = ticket.getEmployee();
-		        	String description = ticket.getDescription();
-		        	double amount = ticket.getAmount();
-		        	String status = ticket.getStatus();
-		        	String timestamp = ticket.getTs();
-		        	String type = ticket.getType();
 		        	
-		        	session.setAttribute("ticket_id", ticket_id);
-		        	session.setAttribute("ticket_employee", employee2);
-		        	session.setAttribute("description", description);
-		        	session.setAttribute("amount", amount);
-		        	session.setAttribute("timestamp", timestamp);
-		        	session.setAttribute("ticket_type", type);
+		        for(Ticket t: ticketList) {
+		        	int ticket_id = t.getTicket_id();
+		        	Employee employee = t.getEmployee();
+		        	String description = t.getDescription();
+		        	double amount = t.getAmount();
+		        	String status = t.getStatus();
+		        	String timestamp = t.getTs();
+		        	String type = t.getType();
 		        	
+		        	int emp_id = employee.getEmp_id();
+		        	String emp_firstName = employee.getFirstName();
+		        	String emp_lastName = employee.getLastName();
+		        
+//		        	 session.setAttribute("ticket_id", ticket_id);
+//			        	session.setAttribute("ticket_employee", employee2);
+//			        	session.setAttribute("description", description);
+//			        	session.setAttribute("amount", amount);
+//			        	session.setAttribute("timestamp", timestamp);
+//			        	session.setAttribute("ticket_type", type);
+//			        	session.setAttribute("status", status);
+			        	
 		        	out.print("<table class='table table-bordered'><thead><tr>");
+		        	out.print("<th>Employee Id</th>");
+		        	out.print("<th>Employee Name</th>");
 		        	out.print("<th>Ticket Id</th>");
 		        	out.print("<th>Type</th>");
 		        	out.print("<th>Description</th>");
@@ -72,20 +77,28 @@ public class AdminServlet extends HttpServlet{
 		        	out.print("<th>Update Status</th>");
 		        	out.print("</tr></thead>");
 		        	out.print("<tbody><tr>");
+		        	out.print("<td>"+emp_id+"</td>");
+		        	out.print("<td>"+emp_firstName+" "+emp_lastName+"</td>");
 		        	out.print("<td>"+ticket_id+"</td>");
 		        	out.print("<td>"+type+"</td>");
 		        	out.print("<td>"+description+"</td>");
 		        	out.print("<td>"+amount+"</td>");
 		        	out.print("<td>"+timestamp+"</td>");
 		        	out.print("<td>"+status+"</td>");
-		        	out.print("<td> <form action='UpdateTicket' method='post' name='status'>"
-		        			+ "                <select name='status' class= 'form-field'>"
-		        			+ "                  <option value='pending'>pending</option>"
-		        			+ " 				 <option value='rejected'>rejected</option>"
-		        			+ "                  <option value='approved'>approved</option>"
-		        			+ "                </select>"
-		        			+" "
-		        			+ " </form></td>");
+		        	out.print("<td>");
+		        	out.print("<form action='Approve' method='post'>\r\n"
+		        			+ "		<input type=\"submit\" value=\"Approve\" class=\"btn btn-outline-primary btn-block\">\r\n"
+		        			+" <input type = 'hidden' name='id' value ='"+ticket_id+"'>"
+		        			+ "	</form>");
+		        	out.print("<form action='Reject' method='post'>\r\n"
+		        			+ "		<input type=\"submit\" value=\"Reject\" class=\"btn btn-outline-primary btn-block\">\r\n"
+		        			+" <input type = 'hidden' name='id' value ='"+ticket_id+"'>"
+		        			+ "	</form>");
+		        	out.print("<form action='Reset' method='post'>\r\n"
+		        			+ "		<input type=\"submit\" value=\"Reset\" class=\"btn btn-outline-primary btn-block\">\r\n"
+		        			+" <input type = 'hidden' name='id' value ='"+ticket_id+"'>"
+		        			+ "	</form>");
+		        	out.print("</td>");
 		    		out.print("</tr></tbody></table>");
 		        }
 			

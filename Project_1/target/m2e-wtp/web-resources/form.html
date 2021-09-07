@@ -5,12 +5,14 @@
 <title>Insert title here</title>
 </head>
 <body>
- <form action="" name="FILTER">
-                <select name="status" class= "form-field">
-                    <option value="rejected">rejected</option>
-                    <option value="pending">pending</option>
-                    <option value="approved">approved</option>
-                </select>
- </form>
+ 	<form action='Filter' method='post'>
+		   <select name='status' class= 'form-field'>
+		   			<option value='all'>ALL</option>
+		        	<option value='pending'>pending</option>
+		        	<option value='rejected'>rejected</option>
+		        	<option value='approved'>approved</option>
+		   </select>
+		<input type="submit" value="Change View" class="btn btn-outline-primary btn-block">
+	</form>
 </body>
 </html>

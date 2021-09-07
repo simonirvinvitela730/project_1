@@ -51,6 +51,56 @@
 		<url-pattern>/AdminServlet</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>UpdateTicket</servlet-name>
+		<servlet-class>servlets.UpdateTicket</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>UpdateTicket</servlet-name>
+		<url-pattern>/UpdateTicket</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Approve</servlet-name>
+		<servlet-class>servlets.Approve</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>Approve</servlet-name>
+		<url-pattern>/Approve</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Reject</servlet-name>
+		<servlet-class>servlets.Reject</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>Reject</servlet-name>
+		<url-pattern>/Reject</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Reset</servlet-name>
+		<servlet-class>servlets.Reset</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>Reset</servlet-name>
+		<url-pattern>/Reset</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Filter</servlet-name>
+		<servlet-class>servlets.Filter</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>Filter</servlet-name>
+		<url-pattern>/Filter</url-pattern>
+	</servlet-mapping>
+	
 	<welcome-file-list>
  		<welcome-file>login.html</welcome-file>
  	</welcome-file-list>

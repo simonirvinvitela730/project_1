@@ -24,21 +24,29 @@ public class App
         
         
         //create employee
-//       Employee employee = new Employee();
-//       employee.setFirstName("Ned");
-//       employee.setLastName("Flanders");
-//       employee.setEmail("nflanders@gmail.com");
-//       employee.setUsername("nflanders1");
-//       employee.setPassword("password");
-//       employee.setType(0);
+       Employee employee = new Employee();
+       employee.setFirstName("Kid");
+       employee.setLastName("Cudi");
+       employee.setEmail("kcudi@gmail.com");
+       employee.setUsername("manonthemoon");
+       employee.setPassword("password");
+       employee.setType(0);
        
-       Admin admin = new Admin();
-       admin.setFirstName("Trisha");
-       admin.setLastName("Folds");
-       admin.setEmail("trish@gmail.com");
-       admin.setUsername("trisha1");
-       admin.setPassword("bestpassword");
-       admin.setType(1);
+       Employee employee2 = new Employee();
+       employee2.setFirstName("Steve");
+       employee2.setLastName("Martin");
+       employee2.setEmail("smartin@gmail.com");
+       employee2.setUsername("smartin1");
+       employee2.setPassword("password");
+       employee2.setType(0);
+       
+//       Admin admin = new Admin();
+//       admin.setFirstName("Trisha");
+//       admin.setLastName("Folds");
+//       admin.setEmail("trish@gmail.com");
+//       admin.setUsername("trisha1");
+//       admin.setPassword("bestpassword");
+//       admin.setType(1);
        
 //       Ticket ticket = new Ticket();
 //       ticket.setAmount(123.23);
@@ -68,7 +76,8 @@ public class App
 //       session.save(ticket);
 //       session.save(ticket2);
 //       session.save(employee);
-        session.save(admin);
+        session.save(employee);
+        session.save(employee2);
         //commit the transaction
         t.commit();
         

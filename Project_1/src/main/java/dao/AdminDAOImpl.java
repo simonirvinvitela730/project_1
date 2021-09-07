@@ -5,6 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.hibernate.Session;
@@ -42,12 +43,28 @@ public class AdminDAOImpl implements AdminDAO{
 //		}return employee;
 		return null;
 	}
-
+	
 	@Override
-	public void reviewTicket(Ticket ticket) throws SQLException {
-		// TODO Auto-generated method stub
-		
+	public Ticket getTicketById(int ticket_id) throws SQLException {
+		Transaction transaction;
+		List<Ticket> ticketList = new ArrayList<>();
+		Ticket ticket = new Ticket();
+		try(Session session = HibernateFactory.getFactory().openSession()){
+			String hql = "from ticket where ticket_id= :n";
+			Query query = session.createQuery(hql);
+			transaction=session.beginTransaction();
+			query.setParameter("n", ticket_id);
+		    ticketList=query.list();
+		    transaction.commit();
+		        
+		    Iterator<Ticket> listIterator = ticketList.iterator();
+		        while (listIterator.hasNext()) {
+		        	ticket = listIterator.next();
+			}
+			return ticket;
+		}
 	}
+
 
 	@Override
 	public List<Ticket> viewTickets() throws SQLException {
@@ -60,26 +77,98 @@ public class AdminDAOImpl implements AdminDAO{
 		e.printStackTrace();
 	}return tickets;
 }
+	
+	@Override
+	public List<Ticket> viewApproved() throws SQLException {
+		List<Ticket> tickets = new ArrayList<>();
+		try(Session session = HibernateFactory.getFactory().openSession()){
+		String hql = "from ticket where status = 'approved'";
+		Query query = session.createQuery(hql);
+		tickets = query.list();
+	}catch(Exception e) {
+		e.printStackTrace();
+	}return tickets;
+}
+	
+	@Override
+	public List<Ticket> viewRejected() throws SQLException {
+		List<Ticket> tickets = new ArrayList<>();
+		try(Session session = HibernateFactory.getFactory().openSession()){
+		String hql = "from ticket where status = 'rejected'";
+		Query query = session.createQuery(hql);
+		tickets = query.list();
+	}catch(Exception e) {
+		e.printStackTrace();
+	}return tickets;
+}
+	
+	@Override
+	public List<Ticket> viewPending() throws SQLException {
+		List<Ticket> tickets = new ArrayList<>();
+		try(Session session = HibernateFactory.getFactory().openSession()){
+		String hql = "from ticket where status = 'pending'";
+		Query query = session.createQuery(hql);
+		tickets = query.list();
+	}catch(Exception e) {
+		e.printStackTrace();
+	}return tickets;
+}
 
 	@Override
-	public void approveTicket(int ticket_id) throws SQLException {
-		
-//		String sql = "update ticket set status = 'approved' where ticket_id ="+ticket_id;
-//		
-//		statement = connection.createStatement();
-//		int update = statement.executeUpdate(sql); 
-		
+	public void approveTicket(Ticket ticket) throws SQLException {
+		Transaction transaction = null;
+		try(Session session = HibernateFactory.getFactory().openSession()){
+	        	String hql = "update ticket set status = :n where ticket_id="+ticket.getTicket_id();
+		        Query query = session.createQuery(hql);
+		        transaction= session.beginTransaction();
+		        query.setParameter("n", "approved");
+		        
+		        int count = query.executeUpdate();
+		        transaction.commit();
+			}catch(Exception e){
+				transaction.rollback();
+				e.printStackTrace();
+			}
+
 	}
 
 	@Override
-	public void rejectTicket(int ticket_id) throws SQLException {
-//		String sql = "update ticket set status = 'rejeted' where ticket_id ="+ticket_id;
-//		
-//		statement = connection.createStatement();
-//		int update = statement.executeUpdate(sql);
-		
-		
+	public void rejectTicket(Ticket ticket) throws SQLException {
+		Transaction transaction = null;
+		try(Session session = HibernateFactory.getFactory().openSession()){
+	        	String hql = "update ticket set status = :n where ticket_id="+ticket.getTicket_id();
+		        Query query = session.createQuery(hql);
+		        transaction= session.beginTransaction();
+		        query.setParameter("n", "rejected");
+		        
+		        int count = query.executeUpdate();
+		        transaction.commit();
+			}catch(Exception e){
+				transaction.rollback();
+				e.printStackTrace();
+			}
+
 	}
+	
+	@Override
+	public void resetTicket(Ticket ticket) throws SQLException{ 
+		Transaction transaction = null;
+	    try(Session session = HibernateFactory.getFactory().openSession()){
+	    		String hql = "update ticket set status = :n where ticket_id="+ticket.getTicket_id();
+	    		Query query = session.createQuery(hql);
+	    		transaction= session.beginTransaction();
+	    		query.setParameter("n", "pending");
+        
+	    		int count = query.executeUpdate();
+	    		transaction.commit();
+	    	}catch(Exception e){
+	    		transaction.rollback();
+	    		e.printStackTrace();
+	    	}
+
+}
+	
+	
 	
 	public List<Admin> getAdminByLogin(String username, String password){
 		List<Admin> adminList = new ArrayList<>();
@@ -93,10 +182,13 @@ public class AdminDAOImpl implements AdminDAO{
         adminList = query.list();
         transaction.commit();
 		}catch(Exception e){
+			transaction.rollback();
 			e.printStackTrace();
 		}
 		return adminList;
 	}
+
+	
 	
 //	@Override
 //	public Admin getAdminByLogin(String username, String password) throws SQLException {

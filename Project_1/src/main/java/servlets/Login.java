@@ -81,11 +81,11 @@ public class Login extends HttpServlet{
 			        	RequestDispatcher rd = request.getRequestDispatcher("/admin.html");
 						rd.include(request, response);
 						
+						RequestDispatcher rd4 = request.getRequestDispatcher("/form.html");
+						rd4.include(request, response);
+						
 						RequestDispatcher rd2 = request.getRequestDispatcher("AdminServlet");
 						rd2.include(request, response);
-						
-						RequestDispatcher rd4 = request.getRequestDispatcher("/button.html");
-						rd4.include(request, response);
 						
 						RequestDispatcher rd3 = request.getRequestDispatcher("/logout.html");
 						rd3.include(request, response);
