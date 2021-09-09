@@ -3,6 +3,9 @@ package servlets;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+
 import com.simonirvinvitela.Employee;
 import com.simonirvinvitela.Ticket;
 
@@ -16,6 +19,8 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 public class Reset extends HttpServlet{
+	private  static  final Logger logger = LogManager.getLogger(Reset.class);
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter(); 
@@ -31,6 +36,7 @@ public class Reset extends HttpServlet{
 	        	AdminDAO dao =  AdminDAOFactory.getAdminDAO();
 	        	ticket = dao.getTicketById(ticket_id);
 				dao.resetTicket(ticket);
+				logger.info("Ticket Id: "+ticket_id+" status changed to pending...");
 			}catch(Exception e) {
 				
 			}

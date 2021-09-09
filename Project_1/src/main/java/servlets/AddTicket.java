@@ -6,6 +6,9 @@ import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.List;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+
 import com.simonirvinvitela.*;
 
 import dao.EmployeeDAO;
@@ -18,6 +21,9 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 public class AddTicket extends HttpServlet{
+	
+	private  static  final Logger logger = LogManager.getLogger(AddTicket.class);
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter(); 
@@ -42,6 +48,8 @@ public class AddTicket extends HttpServlet{
 				String type = request.getParameter("type");
 				String description = request.getParameter("desc");
 				double amount = Double.parseDouble(request.getParameter("amount"));
+				
+				if(amount > 0) {
 			
 			
 				EmployeeDAO dao =  EmployeeDAOFactory.getEmployeeDAO();
@@ -54,7 +62,7 @@ public class AddTicket extends HttpServlet{
 			    dao.updateEmployee(emp_id, ticketList, newEmployee.getFirstName(), newEmployee.getLastName(), 
 			    		newEmployee.getUsername(), newEmployee.getPassword(), newEmployee.getEmail(), newEmployee.getType());
 			       
-				
+			    logger.info("Ticket added for Employee: "+employee.getFirstName()+" "+employee.getLastName());
 				RequestDispatcher rd = request.getRequestDispatcher("/employee.html");
 				rd.include(request, response);
 				
@@ -63,10 +71,15 @@ public class AddTicket extends HttpServlet{
 				
 				RequestDispatcher rd3 = request.getRequestDispatcher("/logout.html");
 				rd3.include(request, response);
+				}else {
+					out.print("<p>Amount must be greater than 0</p>");
+					RequestDispatcher rd = request.getRequestDispatcher("/addReimbursement.html");
+					rd.include(request, response);
+				}
 			
 				}catch(Exception e) {
 				e.printStackTrace();
 					}	
-				}		
+				}
 		}
 }
