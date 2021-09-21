@@ -1,2 +1,16 @@
 # Project_1: Employee Reimbursement Portal
-This project is an employee reimbursement portal which allows employees to submit reimbursement requests. There is a login page which upon logging in you will be redirected to either the employee portal or the admin portal based on login credentials. There's also a bounce back if the credentials don't math anything in either database. While the employee has the ability to submit reimbursement requests and see past reimbursement submissions, the admin instead has the ability to change the status of the reimbursement proposal and filter the reimbursement proposals by status.
+This project is an employee reimbursement portal which allows employees to submit reimbursement requests. There is a login page which upon logging in you will be redirected to either the employee portal or the admin portal based on the login credentials.
+# Technologies Used
+
+# Features
+
+# Getting Started
+
+# Usage
+
+# Contributors
+ <li>
+  <ul> Simon Irvin-Vitela <ul>
+  <ul> Jaydan Jacobs </ul>
+    </li>
+  
