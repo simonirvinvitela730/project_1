@@ -30,9 +30,10 @@ This project is an employee reimbursement portal which allows employees to submi
 <h3> Employee Portal </h3>
 <ul>
   <li> Shared Login - shared login between employee portal and admin portal which differentiates user credentials and redirects to the appropriate page</li>
-  <li> View past reimbursement requests submitted (tied to the individual employee) </li>
+  <li> View reimbursement requests submitted (tied to the individual employee) </li>
   <li> Submit new reimbursement requests </li>
-  <li> Bootstrap </li>
+  <li> Updates view of reimbursement requests upon submission</li>
+  <li> Logout - returns user to login page and invalidates the HTTP Session</li>
  </ul>
 <h3> Admin Portal </h3>
 <ul>
@@ -40,10 +41,21 @@ This project is an employee reimbursement portal which allows employees to submi
   <li> View all pass reimbursement requests </li>
   <li> Change reimbursement request status </li>
   <li> Filter reimbursement requests based on status</li>
+  <li> Logout - returns user to login page and invalidates the HTTP Session</li>
  </ul>
  
 # Getting Started
-
+ First in MySQL create a database by the name of project_1 and update the hibernate.cfg.xml file to include your credentials for your database.
+ Next, in src/main/java/com.simonirvinvitela start by running App.java which will be used to create 2 employees and 1 admin users using hibernate.
+ Following this, you're going to want to run the server and go to http://localhost:8080/Project_1/.
+ You should then be able to log in as either an employee or admin.
+ Employee Logins
+ username: manonthemoon password:password
+ username: smartin1 password: password
+ 
+ Admin Logins 
+ username: trisha1
+ password: bestpassword
 # Usage
 
 # Contributors
