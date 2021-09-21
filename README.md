@@ -10,8 +10,8 @@ This project is an employee reimbursement portal which allows employees to submi
 # Usage
 
 # Contributors
- <li>
-  <ul> Simon Irvin-Vitela </ul>
-  <ul> Jaydan Jacobs </ul>
- </li>
+ <ul>
+  <li> Simon Irvin-Vitela </li>
+  <li> Jaydan Jacobs </li>
+ </ul>
   
