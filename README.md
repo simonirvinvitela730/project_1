@@ -52,13 +52,16 @@ This project is an employee reimbursement portal which allows employees to submi
  <li> You should then be able to log in as either an employee or admin with the following credentials</li>
 </ol>
  
- Employee Logins
- username: manonthemoon password:password
- username: smartin1 password: password
+ <h3>Employee Logins</h3>
+ <ul>
+ <li> username: manonthemoon password:password </li>
+ <li> username: smartin1 password: password </li>
+ </ul>
  
- Admin Logins 
- username: trisha1
- password: bestpassword
+ <h3>Admin Logins</h3>
+ <ul>
+ <li> username: trisha1 password: bestpassword </li>
+ </ul>
 # Usage
 
 # Contributors
