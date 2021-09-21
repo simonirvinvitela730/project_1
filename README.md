@@ -1,8 +1,8 @@
 # Project_1: DONDA Reimbursement Portal
-# Project Description
+## Project Description
 This project is an employee reimbursement portal which allows employees to submit reimbursement requests. There is a login page which upon logging in you will be redirected to either the employee portal or the admin portal based on the login credentials.
 
-# Technologies Used
+## Technologies Used
 <h3>Front-end</h3>
  <ul>
   <li> HTML</li>
@@ -26,7 +26,7 @@ This project is an employee reimbursement portal which allows employees to submi
    <li> Github </li>
   </ul>
 
-# Features
+## Features
 <h3> Employee Portal </h3>
 <ul>
   <li> Shared Login - shared login between employee portal and admin portal which differentiates user credentials and redirects to the appropriate page</li>
@@ -44,7 +44,7 @@ This project is an employee reimbursement portal which allows employees to submi
   <li> Logout - returns user to login page and invalidates the HTTP Session</li>
  </ul>
  
-# Getting Started
+## Getting Started
 <ol>
  <li> First in MySQL create a database by the name of project_1 and update the hibernate.cfg.xml file to include your credentials for your database.</li>
  <li> Next, in src/main/java/com.simonirvinvitela start by running App.java which will be used to create 2 employees and 1 admin users using hibernate. </li>
@@ -63,7 +63,7 @@ This project is an employee reimbursement portal which allows employees to submi
  <li> username: trisha1 password: bestpassword </li>
  </ul>
  
-# Usage
+## Usage
 <h3> Login Page </h3>
 
 ![alt text](https://github.com/simonirvinvitela730/project_1/blob/main/images/Employee_Login.png?raw=true)
@@ -106,7 +106,7 @@ This project is an employee reimbursement portal which allows employees to submi
 
 <br>
 
-# Contributors
+## Contributors
  <ul>
   <li> Simon Irvin-Vitela </li>
   <li> Jaydan Jacobs </li>
