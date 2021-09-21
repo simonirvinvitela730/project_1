@@ -45,10 +45,13 @@ This project is an employee reimbursement portal which allows employees to submi
  </ul>
  
 # Getting Started
- First in MySQL create a database by the name of project_1 and update the hibernate.cfg.xml file to include your credentials for your database.
- Next, in src/main/java/com.simonirvinvitela start by running App.java which will be used to create 2 employees and 1 admin users using hibernate.
- Following this, you're going to want to run the server and go to http://localhost:8080/Project_1/.
- You should then be able to log in as either an employee or admin.
+<ol>
+ <li> First in MySQL create a database by the name of project_1 and update the hibernate.cfg.xml file to include your credentials for your database.</li>
+ <li> Next, in src/main/java/com.simonirvinvitela start by running App.java which will be used to create 2 employees and 1 admin users using hibernate. </li>
+ <li> Following this, you're going to want to run the server and go to http://localhost:8080/Project_1 </li>
+ <li> You should then be able to log in as either an employee or admin with the following credentials</li>
+</ol>
+ 
  Employee Logins
  username: manonthemoon password:password
  username: smartin1 password: password
