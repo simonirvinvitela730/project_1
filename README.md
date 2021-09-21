@@ -64,6 +64,7 @@ This project is an employee reimbursement portal which allows employees to submi
  </ul>
  
 # Usage
+![alt text](https://github.com/simonirvinvitela730/project_1/blob/main/images/image.jpg?raw=true)
 
 # Contributors
  <ul>
