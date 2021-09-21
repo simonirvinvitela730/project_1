@@ -65,25 +65,45 @@ This project is an employee reimbursement portal which allows employees to submi
  
 # Usage
 <h3> Login Page </h3>
+
 ![alt text](https://github.com/simonirvinvitela730/project_1/blob/main/images/Employee_Login.png?raw=true)
+
 <br>
+
 <h3> Employee Portal </h3>
+
 ![alt text](https://github.com/simonirvinvitela730/project_1/blob/main/images/Employee_Portal.png?raw=true)
+
 <br>
+
 <h3> Employee Reimbursement Form </h3>
+
 ![alt text](https://github.com/simonirvinvitela730/project_1/blob/main/images/Employee_Reimbursement_Form.png?raw=true)
+
 <br>
+
 <h3> Updated Employee Tickets </h3>
+
 ![alt text](https://github.com/simonirvinvitela730/project_1/blob/main/images/Updated_Employee_Portal.png?raw=true)
+
 <br>
+
 <h3> Admin Portal </h3>
+
 ![alt text](https://github.com/simonirvinvitela730/project_1/blob/main/images/Admin_Portal.png?raw=true)
+
 <br>
+
 <h3> Admin Ticket Status Change</h3>
+
 ![alt text](https://github.com/simonirvinvitela730/project_1/blob/main/images/Updated_Admin_Portal.png?raw=true)
+
 <br>
+
 <h3> Admin Status Filtering ("rejected")</h3>
+
 ![alt text](https://github.com/simonirvinvitela730/project_1/blob/main/images/Admin_Filtering.png?raw=true)
+
 <br>
 
 # Contributors
